@@ -9,10 +9,9 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/api/getPlayerSummaries")
-async def playerSummaries():
-    steamid = 76561198134424238
-    res = await getPlayerSummaries(steamid)
+@app.get("/api/getPlayerSummaries/{steamId}")
+async def playerSummaries(steamId:str):
+    res = await getPlayerSummaries(steamId)
     card = renderUserCard(res['playerName'], res['playerProfileUrl'], res['avatar'])
     headers =  dict({
           "Content-Type": "image/svg+xml",
@@ -20,8 +19,7 @@ async def playerSummaries():
         })
     return Response(content=card, headers=headers)
 
-@app.get("/api/getOwnedGames")
-async def playerSummaries():
-    steamid = 76561198134424238
-    res = await getOwnedGames(steamid,12)
+@app.get("/api/getOwnedGames/{steamId}")
+async def playerSummaries(steamId:str):
+    res = await getOwnedGames(steamId,12)
     return res
