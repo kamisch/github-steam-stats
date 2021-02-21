@@ -1,18 +1,18 @@
 from utils.response import imgUrlToBase64DataImage
 
 
-def renderUserCard(playerName: str, playerUrl: str, playerAvatarUrl: str, bgColor:str, textColor:str):
+def renderUserCard(playerName: str, playerUrl: str, playerAvatarUrl: str,width:int, height:int, bgColor:str, textColor:str, boarderColor:str, boarderWidth:int):
     dataImage = imgUrlToBase64DataImage(playerAvatarUrl)
     
     body =  """<svg xmlns="http://www.w3.org/2000/svg" width="150" height ="160" version="1.1">
-          <rect x="0" y="0" rx="4.5" width="120" height="140" stroke="black" fill="{}" stroke-width="2"/>
+          <rect x="0" y="0" rx="4.5" width="120" height="140" stroke="black" fill='{}' stroke-width="2"/>
           <image href="{}" x="10" y="10" height="100" width="100"/>
           <text x ='60' y ='130' text-anchor="middle" fill = "{}">{}</text>
           </svg>""".format(bgColor,dataImage,textColor,playerName)
 
     return body
 
-def renderGame(gameName:str, gameId:int, gameTime:int, gameHash:int,x:int, y:int, width:int, height:int, layout:str):
+def renderGame(gameName:str, gameId:int, gameTime:int, gameHash:int,x:int, y:int, width:int, height:int, bgColor:str, textColor:str, boarderColor:str, boarderWidth:int):
     gameImgUrl = "http://media.steampowered.com/steamcommunity/public/images/apps/{}/{}.jpg".format(gameId,gameHash)
     dataImage = imgUrlToBase64DataImage(gameImgUrl)
     gameHours = round(gameTime/60,1)
@@ -24,12 +24,10 @@ def renderGame(gameName:str, gameId:int, gameTime:int, gameHash:int,x:int, y:int
           </svg>""".format(width=width, height=height, x=x, y=y, gameHours=gameHours, dataImg= dataImage,gameName=gameName)
 
 
-def renderOwnedGamesCard(data, row:int, column:int):
+def renderOwnedGamesCard(data, row:int, column:int,width:int, height:int, bgColor:str, textColor:str, boarderColor:str, boarderWidth:int):
     gameCards = ""
     totalWidth  = 120
     totalHeight = 0
-    width = 120
-    height = 100
     x = 0
     y = 0
     currentRow = 0
@@ -39,8 +37,8 @@ def renderOwnedGamesCard(data, row:int, column:int):
         gid = game['appid']
         playTime = game['playtime_forever']
         logoHash = game['img_logo_url']
-        gameCards += renderGame(name, gid, playTime, logoHash, x,y, width, height, 'full')
-        if currentCol == 0:
+        gameCards += renderGame(name, gid, playTime, logoHash, x,y, width, height, bgColor, textColor, boarderColor, boarderWidth)
+        if currentRow == 0:
             totalWidth += width
         if currentCol == column-1:
             y += height
