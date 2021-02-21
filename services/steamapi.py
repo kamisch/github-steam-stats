@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 apiKey = os.getenv('API_KEY')
-print(apiKey)
 async def getPlayerSummaries(steamid:str):
     url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={}&steamids={}".format(apiKey, steamid)
     response = requests.get(url)
