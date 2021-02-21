@@ -14,7 +14,7 @@ async def getPlayerSummaries(steamid:str):
         res = {
             "playerName":  data['response']['players'][0]['personaname'],
             'playerProfileUrl': data['response']['players'][0]['profileurl'],
-            'avatar': data['response']['players'][0]['avatarfull']
+            'avatar': data['response']['players'][0]['avatarmedium']
         }
         return res
     else:

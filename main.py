@@ -14,7 +14,7 @@ async def playerSummaries(steamId:str):
     res = await getPlayerSummaries(steamId)
     card = renderUserCard(res['playerName'], res['playerProfileUrl'], res['avatar'])
     headers =  dict({
-          "Content-Type": "image/svg+xml",
+          "Content-Type": "image/svg",
           "Cache-Control": "public, max-age=7200",
         })
     return Response(content=card, headers=headers)
