@@ -24,8 +24,10 @@ async def playerSummaries(steamId:str, bgColor: Optional[str] = 'transparent', t
     return Response(content=card, headers=headers)
 
 @app.get("/api/getOwnedGames/{steamId}")
-async def playerSummaries(steamId:str, row: Optional[int] = 1, col: Optional[int] = 12):
-    res = await getOwnedGames(steamId,12)
+async def playerSummaries(steamId:str,limit:Optional[int] = 6, row: Optional[int] = 1, col: Optional[int] = 12):
+    if(limit < col):
+        col = limit
+    res = await getOwnedGames(steamId,limit)
     card = renderOwnedGamesCard(res, row, col)
     headers =  dict({
           "Content-Type": "image/svg+xml",

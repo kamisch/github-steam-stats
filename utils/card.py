@@ -26,6 +26,8 @@ def renderGame(gameName:str, gameId:int, gameTime:int, gameHash:int,x:int, y:int
 
 def renderOwnedGamesCard(data, row:int, column:int):
     gameCards = ""
+    totalWidth  = 120
+    totalHeight = 0
     width = 120
     height = 100
     x = 0
@@ -38,11 +40,14 @@ def renderOwnedGamesCard(data, row:int, column:int):
         playTime = game['playtime_forever']
         logoHash = game['img_logo_url']
         gameCards += renderGame(name, gid, playTime, logoHash, x,y, width, height, 'full')
+        if currentCol == 0:
+            totalWidth += width
         if currentCol == column-1:
             y += height
             x = 0
             currentCol = 0
             currentRow += 1
+            totalHeight += height
         elif currentRow != row:    
             x += width
             currentCol += 1
@@ -50,5 +55,5 @@ def renderOwnedGamesCard(data, row:int, column:int):
             break
 
     return """<svg xmlns="http://www.w3.org/2000/svg"
-      fill="none" width = "1960" height = "1960">
-    {}</svg>""".format(gameCards)
+      fill="none" width="{}" height="{}">
+    {}</svg>""".format(totalWidth, totalHeight,gameCards)
