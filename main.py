@@ -3,6 +3,10 @@ from fastapi.responses import JSONResponse
 from typing import Optional
 from services.steamapi import getPlayerSummaries, getOwnedGames
 from utils.card import renderUserCard, renderOwnedGamesCard
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 app = FastAPI()
 
 
@@ -28,9 +32,10 @@ async def playerSummaries(steamId: str,
     res = await getPlayerSummaries(steamId)
     card = renderUserCard(res['playerName'], res['playerProfileUrl'],
                           res['avatar'],width,height, bgColor, textColor,boarderColor,boarderWidth)
+    contentControlHeader = "public, max-age={}".format(os.getenv('CACHE_AGE'))
     headers = dict({
         "Content-Type": "image/svg+xml",
-        "Cache-Control": "public, max-age=7200",
+        "Cache-Control": contentControlHeader,
     })
     return Response(content=card, headers=headers)
 
@@ -50,8 +55,10 @@ async def playerSummaries(steamId: str,
         col = limit
     res = await getOwnedGames(steamId, limit)
     card = renderOwnedGamesCard(res, row, col,width,height,bgColor,textColor,boarderColor,boarderWidth)
+    contentControlHeader = "public, max-age={}".format(os.getenv('CACHE_AGE'))
+
     headers = dict({
         "Content-Type": "image/svg+xml",
-        "Cache-Control": "public, max-age=300",
+        "Cache-Control": contentControlHeader,
     })
     return Response(content=card, headers=headers)
