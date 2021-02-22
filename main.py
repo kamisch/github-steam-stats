@@ -24,9 +24,9 @@ async def favicon():
 async def playerSummaries(steamId: str,
                           width: Optional[int] = 150,
                           height:Optional[int] = 160,
-                          bgColor: Optional[str] = 'transparent',
-                          textColor: Optional[str] = 'black',
-                          boarderColor: Optional[str] = 'black',
+                          bgColor: Optional[str] = 'ffffff',
+                          textColor: Optional[str] = '000000',
+                          boarderColor: Optional[str] = '000000',
                           boarderWidth: Optional[str] = '2'):
     #hex or transparent
     res = await getPlayerSummaries(steamId)
@@ -47,9 +47,9 @@ async def playerSummaries(steamId: str,
                           col: Optional[int] = 12,
                           width: Optional[int] = 120,
                           height:Optional[int] = 70,
-                          bgColor: Optional[str] = 'transparent',
-                          textColor: Optional[str] = 'black',
-                          boarderColor: Optional[str] = 'black',
+                          bgColor: Optional[str] = 'ffffff',
+                          textColor: Optional[str] = '000000',
+                          boarderColor: Optional[str] = '000000',
                           boarderWidth: Optional[str] = '2'):
     if (limit < col):
         col = limit
