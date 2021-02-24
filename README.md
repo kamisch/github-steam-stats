@@ -6,7 +6,7 @@
 
 ## Player's top most played game
 
-![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?limit=6&boarderColor=purple&bgColor=purple&textColor=white)
+![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?limit=6&boarderColor=800080&bgColor=800080&textColor=ffffff)
 
 copy and paste the following code to your github readme to list your top most played games from steam
 ```
