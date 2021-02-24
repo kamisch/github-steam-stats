@@ -24,6 +24,14 @@ copy and paste the following code to your github readme to show your steam profi
 
 # Additional Parameters
 
+steamId: str,
+limit: Optional[int] = 6,
+row: Optional[int] = 1,
+col: Optional[int] = 12,
+bgColor: Optional[str] = 'ffffff',
+textColor: Optional[str] = '000000',
+boarderColor: Optional[str] = '000000',
+boarderWidth:  Optional[str] = '2'
 
 # Deployment
 
