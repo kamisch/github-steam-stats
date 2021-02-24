@@ -21,6 +21,10 @@ copy and paste the following code to your github readme to show your steam profi
 ```
 ![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/<steam_id>)
 ```
+## Where to find your steam id
+
+Open your steam client, and go to top right where you see your profile icon and your steam wallet ballance, click it and a dropdown should open. 
+Click on Account Details, and you should see your steam id on the top left. 
 
 # Additional Parameters
 
