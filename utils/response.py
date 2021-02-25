@@ -9,3 +9,11 @@ def imgUrlToBase64DataImage(url):
 def sortOwnGames(data):
     res = sorted(data['games'], key=lambda x : x['playtime_forever'], reverse=True)
     return res
+
+def replaceXmlCharacter(word):
+    word = word.replace("<","&lt ")
+    word = word.replace(">","&gt ")
+    word = word.replace('"',"&quot; ")
+    word = word.replace("&","and")
+    print(word)
+    return word

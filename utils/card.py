@@ -1,8 +1,9 @@
-from utils.response import imgUrlToBase64DataImage
+from utils.response import imgUrlToBase64DataImage, replaceXmlCharacter
 
 
 def renderUserCard(playerName: str, playerUrl: str, playerAvatarUrl: str,width:int, height:int, bgColor:str, textColor:str, boarderColor:str, boarderWidth:int):
     dataImage = imgUrlToBase64DataImage(playerAvatarUrl)
+    playerName = replaceXmlCharacter(playerName)
     body =  """<svg xmlns="http://www.w3.org/2000/svg" width="150" height ="160" version="1.1">
           <rect x="0" y="0" rx="4.5" width="120" height="140" stroke="#{boarderColor}" fill='#{bgColor}' stroke-width="{boarderWidth}"/>
           <image href="{dataImage}" x="10" y="10" height="100" width="100"/>
@@ -14,6 +15,7 @@ def renderUserCard(playerName: str, playerUrl: str, playerAvatarUrl: str,width:i
 def renderGame(gameName:str, gameId:int, gameTime:int, gameHash:int,x:int, y:int, width:int, height:int, bgColor:str, textColor:str, boarderColor:str, boarderWidth:int):
     gameImgUrl = "http://media.steampowered.com/steamcommunity/public/images/apps/{}/{}.jpg".format(gameId,gameHash)
     dataImage = imgUrlToBase64DataImage(gameImgUrl)
+    gameName = replaceXmlCharacter(gameName)
     gameHours = round(gameTime/60,1)
     body = """<svg xmlns="http://www.w3.org/2000/svg" x ="{x}" y="{y}" width="{width}" height ="{height}" version="1.1">
           <title>{gameName}</title>
