@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Response
+from fastapi import FastAPI, Response,Path, Query
 from fastapi.responses import JSONResponse
 from typing import Optional
 from services.steamapi import getPlayerSummaries, getOwnedGames
@@ -21,11 +21,11 @@ async def favicon():
 
 
 @app.get("/api/getPlayerSummaries/{steamId}")
-async def playerSummaries(steamId: str,
-                          bgColor: Optional[str] = 'ffffff',
-                          textColor: Optional[str] = '000000',
-                          boarderColor: Optional[str] = '000000',
-                          boarderWidth: Optional[str] = '2'):
+async def playerSummaries(steamId: str = Path(...,max_length=30),
+                          bgColor: Optional[str] = Query('ffffff',min_length=6, max_length=6),
+                          textColor: Optional[str] =  Query('000000',min_length=6,max_length=6),
+                          boarderColor: Optional[str] =  Query('000000',min_length=6,max_length=6),
+                          boarderWidth: Optional[int] = Query(2,gt=-1, lt=20) ):
     #hex or transparent
     width = 150
     height= 160
@@ -41,14 +41,14 @@ async def playerSummaries(steamId: str,
 
 
 @app.get("/api/getOwnedGames/{steamId}")
-async def playerSummaries(steamId: str,
-                          limit: Optional[int] = 6,
-                          row: Optional[int] = 1,
-                          col: Optional[int] = 12,
-                          bgColor: Optional[str] = 'ffffff',
-                          textColor: Optional[str] = '000000',
-                          boarderColor: Optional[str] = '000000',
-                          boarderWidth: Optional[str] = '2'):
+async def playerSummaries(steamId: str = Path(...,max_length=30),
+                          limit: Optional[int] = Query(6,gt=0, lt=13),
+                          row: Optional[int] = Query(1,gt=1, lt=13),
+                          col: Optional[int] = Query(6,gt=1, lt=13),
+                          bgColor: Optional[str] = Query('ffffff',min_length=6,max_length=6),
+                          textColor: Optional[str] =  Query('000000',min_length=6,max_length=6),
+                          boarderColor: Optional[str] =  Query('000000',min_length=6,max_length=6),
+                          boarderWidth: Optional[int] = Query(2,gt=-1, lt=20) ):
     if (limit < col):
         col = limit
     res = await getOwnedGames(steamId, limit)
