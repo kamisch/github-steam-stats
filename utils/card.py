@@ -7,7 +7,7 @@ def renderUserCard(playerName: str, playerUrl: str, playerAvatarUrl: str,width:i
     body =  """<svg xmlns="http://www.w3.org/2000/svg" width="150" height ="160" version="1.1">
           <rect x="0" y="0" rx="4.5" width="120" height="140" stroke="#{boarderColor}" fill='#{bgColor}' stroke-width="{boarderWidth}"/>
           <image href="{dataImage}" x="10" y="10" height="100" width="100"/>
-          <a href="{playerUrl}"><text x ='60' y ='130' text-anchor="middle" font-family="Consolas, monospace" textfill = "#{textColor}">{playerName}</text></a>
+          <text x ='60' y ='130' text-anchor="middle" font-family="Consolas, monospace" textfill = "#{textColor}">{playerName}</text>
           </svg>""".format(playerName=playerName, playerUrl=playerUrl, dataImage=dataImage, bgColor=bgColor,textColor=textColor, boarderColor=boarderColor,boarderWidth=boarderWidth)
 
     return body
