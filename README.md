@@ -31,7 +31,7 @@ Click on Account Details, and you should see your steam id on the top left.
 
 ### Common for both cards
 
-| parameter name | example value | description  |
+| parameter name | default value | description  |
 |---|---|---|
 | bgColor  | ffffff | any hex value, do not include hashtag |
 | textColor | 000000 |  any hex value, do not include hashtag |
@@ -39,11 +39,18 @@ Click on Account Details, and you should see your steam id on the top left.
 | boarderWidth | 2 |  interger |
 
 ### Most Played Games Card 
-| parameter name | example value | description  |
+| parameter name | default value | description  |
 |---|---|---|
 | limit  | 6 | interger less than 12 |
 | row | 1 | interger |
-| col  | 12 | interger |
+| col  | 6| interger |
+
+### example cards with differnt style
+
+![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?bgColor=282a36&textColor=de87be&boarderColor=000000&boarderWidth=1&row=2&col=3)
+
+![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238?bgColor=282a36&textColor=de87be&boarderColor=000000&boarderWidth=4)
+
 
 # Hosting :electric_plug:
 
