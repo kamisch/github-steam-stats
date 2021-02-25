@@ -7,7 +7,7 @@ Currently I'm only able to get total hours played data for a user since if user'
 
 ### Most Played Games Card 
 
-![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?limit=6&boarderColor=800080&bgColor=800080&textColor=ffffff)
+![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238)
 
 copy and paste the following code to your github readme to list your top most played games from steam
 ```
@@ -16,7 +16,7 @@ copy and paste the following code to your github readme to list your top most pl
 
 ### Player Profile Card
 
-![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238?boarderColor=white&boarderWidth=2&bgColor=282a36)
+![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238)
 
 copy and paste the following code to your github readme to show your steam profile, other people can click your profile pic to checkout your steam profile. Use this on your own discretion
 ```
@@ -31,7 +31,7 @@ Click on Account Details, and you should see your steam id on the top left.
 
 ### Common for both cards
 
-| parameter name | example value | description  |
+| parameter name | default value | description  |
 |---|---|---|
 | bgColor  | ffffff | any hex value, do not include hashtag |
 | textColor | 000000 |  any hex value, do not include hashtag |
@@ -39,11 +39,18 @@ Click on Account Details, and you should see your steam id on the top left.
 | boarderWidth | 2 |  interger |
 
 ### Most Played Games Card 
-| parameter name | example value | description  |
+| parameter name | default value | description  |
 |---|---|---|
 | limit  | 6 | interger less than 12 |
 | row | 1 | interger |
-| col  | 12 | interger |
+| col  | 6| interger |
+
+### example cards with differnt style
+
+![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?bgColor=282a36&textColor=de87be&boarderColor=000000&boarderWidth=1&row=2&col=3)
+
+![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238?bgColor=282a36&textColor=de87be&boarderColor=000000&boarderWidth=4)
+
 
 # Hosting :electric_plug:
 
