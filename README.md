@@ -65,8 +65,8 @@ copy and paste the following code to your to a markdown to show your steam profi
 |---|---|---|
 | bgColor  | ffffff | any hex value, do not include hashtag |
 | textColor | 000000 |  any hex value, do not include hashtag |
-| boarderColor  | 000000 | any hex value, do not include hashtag |
-| boarderWidth | 2 |  interger |
+| borderColor  | 000000 | any hex value, do not include hashtag |
+| borderWidth | 2 |  interger |
 
 ### Most Played Games Card 
 | parameter name | default value | description  |
@@ -77,9 +77,9 @@ copy and paste the following code to your to a markdown to show your steam profi
 
 ### example cards with differnt style
 
-![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?bgColor=282a36&textColor=de87be&boarderColor=000000&boarderWidth=1&row=2&col=3)
+![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?bgColor=282a36&textColor=de87be&borderColor=000000&borderWidth=1&row=2&col=3)
 
-![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238?bgColor=282a36&textColor=de87be&boarderColor=000000&boarderWidth=4)
+![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238?bgColor=282a36&textColor=de87be&borderColor=000000&borderWidth=4)
 
 
 # Hosting :electric_plug:
