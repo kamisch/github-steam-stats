@@ -37,7 +37,11 @@ def renderOwnedGamesCard(data, row:int, column:int,width:int, height:int, bgColo
         name = game['name']
         gid = game['appid']
         playTime = game['playtime_forever']
-        logoHash = game['img_logo_url']
+        logoHash = ''
+        try:
+            logoHash = game['img_logo_url']
+        except:
+            logoHash = game['img_icon_url']
         gameCards += renderGame(name, gid, playTime, logoHash, x,y, width, height, bgColor, textColor, borderColor, borderWidth)
         if currentRow == 0:
             totalWidth += width
