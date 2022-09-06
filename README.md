@@ -84,8 +84,11 @@ copy and paste the following code to your to a markdown to show your steam profi
 
 # Hosting :electric_plug:
 
-This api is currently hosted on Heroku using the Heroku free tier dyno. So that means if images of your cards didn't show up that might mean the heroku server was sleeping. Try to refresh after a couple minutes.
+You can host this application using any services or platforms that supports Docker
 
+Use the dockerfile to build the image and run the container with the required env variables from the .env.template
+
+API_KEY environment variable can be created using Steam Developer account
 # Development :computer:
 
 This project is built with Fastapi, and it uses the Steam API to get all Steam related data. If you are interested in contributing to this project, please fork the repo and start a PR. 
