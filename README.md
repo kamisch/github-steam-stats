@@ -18,20 +18,20 @@ Click on Account Details, and you should see your steam id on the top left.
 #### API
 
 ```
-https://githubsteamstats.herokuapp.com/api/getOwnedGames/<steam_id>
+<domain>/api/getOwnedGames/<steam_id>
 ```
 
 #### Markdown usage
 
 copy and paste the following code to your to a markdown to list your top most played games from steam
 ```
-![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/<steam_id>)
+![top played games list](<domain>/api/getOwnedGames/<steam_id>)
 ```
 
 #### HTML usage
 
 ```
-<img href = "https://githubsteamstats.herokuapp.com/api/getOwnedGames/<steam_id>">
+<img href = "<domain>/api/getOwnedGames/<steam_id>">
 ```
 
 ### Player Profile Card
@@ -41,20 +41,20 @@ copy and paste the following code to your to a markdown to list your top most pl
 #### API
 
 ```
-https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/<steam_id>
+<domain>/api/getPlayerSummaries/<steam_id>
 ```
 
 #### Markdown usage
 
 copy and paste the following code to your to a markdown to show your steam profile
 ```
-![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/<steam_id>)
+![steam profile](<domain>/api/getPlayerSummaries/<steam_id>)
 ```
 
 #### HTML usage
 
 ```
-<img href = "https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/<steam_id>">
+<img href = "<domain>/api/getPlayerSummaries/<steam_id>">
 ```
 
 # API Parameters :bulb:
