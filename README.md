@@ -13,7 +13,7 @@ Click on Account Details, and you should see your steam id on the top left.
 
 ### Most Played Games Card 
 
-![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238)
+![top played games list](./assets/ownedGames.PNG)
 
 #### API
 
@@ -36,7 +36,7 @@ copy and paste the following code to your to a markdown to list your top most pl
 
 ### Player Profile Card
 
-![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238)
+![steam profile](./assets/githubProfile.PNG)
 
 #### API
 
@@ -77,9 +77,9 @@ copy and paste the following code to your to a markdown to show your steam profi
 
 ### example cards with differnt style
 
-![top played games list](https://githubsteamstats.herokuapp.com/api/getOwnedGames/76561198134424238?bgColor=282a36&textColor=de87be&borderColor=000000&borderWidth=1&row=2&col=3)
+![top played games list](./assets/ownedGamesCustom.PNG)
 
-![steam profile](https://githubsteamstats.herokuapp.com/api/getPlayerSummaries/76561198134424238?bgColor=282a36&textColor=de87be&borderColor=000000&borderWidth=4)
+![steam profile](./assets/githubProfileCustom.PNG)
 
 
 # Hosting :electric_plug:
