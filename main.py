@@ -52,6 +52,7 @@ async def playerSummaries(steamId: str = Path(...,max_length=30),
     if (limit < col):
         col = limit
     res = await getOwnedGames(steamId, limit)
+    print("res", res)
     width = 120
     height= 70
     card = renderOwnedGamesCard(res, row, col,width,height,bgColor,textColor,borderColor,borderWidth)

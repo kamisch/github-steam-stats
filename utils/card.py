@@ -33,6 +33,7 @@ def renderOwnedGamesCard(data, row:int, column:int,width:int, height:int, bgColo
     y = 0
     currentRow = 0
     currentCol = 0
+    print("data", data)
     for game in data['topMostPlayedTenGames']:
         name = game['name']
         gid = game['appid']
